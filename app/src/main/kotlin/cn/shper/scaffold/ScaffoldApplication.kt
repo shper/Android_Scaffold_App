@@ -2,7 +2,6 @@ package cn.shper.scaffold
 
 import android.app.Application
 import cn.shper.tklogger.TKLogger
-import java.io.File
 
 /**
  * Author : Shper
@@ -14,6 +13,10 @@ class ScaffoldApplication : Application() {
   override fun onCreate() {
     super.onCreate()
 
+    setupLibrary()
+  }
+
+  private fun setupLibrary() {
     TKLogger.setup(tag = "Android_Scaffold")
   }
 
