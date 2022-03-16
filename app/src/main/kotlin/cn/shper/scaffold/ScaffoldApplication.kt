@@ -2,6 +2,7 @@ package cn.shper.scaffold
 
 import android.app.Application
 import cn.shper.tklogger.TKLogger
+import cn.shper.tklogger.destination.TKLogConsoleDestination
 
 /**
  * Author : Shper
@@ -10,14 +11,15 @@ import cn.shper.tklogger.TKLogger
  */
 class ScaffoldApplication : Application() {
 
-  override fun onCreate() {
-    super.onCreate()
+    override fun onCreate() {
+        super.onCreate()
 
-    setupLibrary()
-  }
+        setupLibrary()
+    }
 
-  private fun setupLibrary() {
-    TKLogger.setup(tag = "Android_Scaffold")
-  }
+    private fun setupLibrary() {
+        TKLogger.setup(tag = "Android_Scaffold")
+        TKLogger.addDestination(TKLogConsoleDestination())
+    }
 
 }
